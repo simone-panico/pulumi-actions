@@ -94,16 +94,12 @@ inputs:
     description: 'Delete the stack after a destroy operation'
     required: false
     default: 'false'
-  color-pr-comment:
-    description: 'Use diff syntax highlighting in PR comments to colorize changes'
-    required: false
-    default: 'false'
   edit-pr-comment:
     description: 'Edit previous PR comment instead of posting new one'
     required: false
     default: 'true'
   color:
-    description: 'Colorize output. Choices are: always, never, raw, auto'
+    description: 'Colorize output. Choices are: always, never, raw, auto. When set to "always", PR comments will use diff syntax highlighting'
     required: false
     default: 'auto'
   exclude-protected:

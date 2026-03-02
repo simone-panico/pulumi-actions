@@ -76,7 +76,6 @@ export async function handlePullRequestMessage(
     command,
     stackName,
     editCommentOnPr,
-    colorPrComment,
     alwaysIncludeSummary,
   } = config;
 
@@ -104,9 +103,9 @@ export async function handlePullRequestMessage(
       ? ':warning: **Warn**: The output was too long and trimmed from the front.'
       : ''
     }
-    ${colorPrComment ? '```diff' : '<pre>'}
-    ${colorPrComment ? moveDiffMarkersToLineStart(message) : message}
-    ${colorPrComment ? '```' : '</pre>'}
+    ${config.options.color === 'always' ? '```diff' : '<pre>'}
+    ${config.options.color === 'always' ? moveDiffMarkersToLineStart(message) : message}
+    ${config.options.color === 'always' ? '```' : '</pre>'}
     ${trimmed && !alwaysIncludeSummary
       ? ':warning: **Warn**: The output was too long and trimmed.'
       : ''

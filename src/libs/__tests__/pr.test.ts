@@ -194,7 +194,7 @@ describe('pr.ts', () => {
     });
   });
 
-  it('should use diff code block when colorPrComment is true', async () => {
+  it('should use diff code block when color is always', async () => {
     // @ts-ignore
     gh.context = {
       payload: {
@@ -206,7 +206,7 @@ describe('pr.ts', () => {
 
     const options: Config = {
       ...defaultOptions,
-      colorPrComment: true,
+      options: { ...defaultOptions.options, color: 'always' as const },
     };
 
     process.env.GITHUB_REPOSITORY = 'pulumi/actions';

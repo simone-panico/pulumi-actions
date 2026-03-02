@@ -90,7 +90,6 @@ export function makeConfig() {
     // @see https://github.com/pulumi/actions/pull/913
     // @see https://github.com/pulumi/actions/pull/912
     configMap: getYAMLInput<ConfigMap>('config-map'),
-    colorPrComment: getBooleanInput('color-pr-comment'),
     editCommentOnPr: getBooleanInput('edit-pr-comment'),
     alwaysIncludeSummary: getBooleanInput('always-include-summary'),
 
